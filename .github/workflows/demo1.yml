@@ -3,7 +3,15 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - master
+      - 'dev-*'
   workflow_dispatch:
+  push:
+    branches:
+      - master
+      - 'dev-*'
+      - 'feat/**' #double * for feat/a/v
 jobs:
   deploy:
     runs-on: ubuntu-latest
